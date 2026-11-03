@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_canvas">#F7F6F2</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="bg_surface_muted">#ECEAE3</color>
+    <color name="text_primary">#141A17</color>
+    <color name="text_secondary">#45504B</color>
+    <color name="text_hint">#596560</color>
+    <color name="border_stroke">#596560</color>
+    <color name="accent_primary">#0F5C4C</color>
+    <color name="accent_primary_pressed">#093D32</color>
+    <color name="accent_on_primary">#FFFFFF</color>
+    <color name="focus_ring">#0F5C4C</color>
+    <color name="status_ok_text">#145A32</color>
+    <color name="status_ok_bg">#E6F4EC</color>
+    <color name="status_danger_text">#9E2A2B</color>
+    <color name="status_danger_bg">#FCEAEA</color>
+    <color name="overlay_backdrop">#121514</color>
+    <color name="overlay_card">#1B201E</color>
+    <color name="overlay_text_primary">#F0F4F2</color>
+    <color name="overlay_text_secondary">#B8C4BE</color>
+    <color name="overlay_border">#7E8F87</color>
+</resources>

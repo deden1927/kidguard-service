@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Layanan Sistem</string>
+    <string name="header_subtitle">Pengaturan Sinkronisasi &amp; Pemeliharaan Sistem</string>
+    <string name="btn_toggle_theme_light">Tema: Terang (Ketuk untuk Gelap)</string>
+    <string name="btn_toggle_theme_dark">Tema: Gelap (Ketuk untuk Terang)</string>
+
+    <string name="pin_gate_title">Akses Pengaturan Orang Tua</string>
+    <string name="pin_gate_desc">Halaman ini dilindungi PIN agar anak tidak mengubah konfigurasi bot atau mematikan pemantauan.</string>
+    <string name="pin_gate_label">Masukkan PIN Orang Tua (4 sampai 8 digit)</string>
+    <string name="pin_gate_hint">Contoh: 1234</string>
+    <string name="pin_gate_submit">Buka Pengaturan dengan PIN</string>
+    <string name="pin_gate_error_empty">PIN tidak boleh kosong. Masukkan PIN yang sudah Anda daftarkan.</string>
+    <string name="pin_gate_error_wrong">PIN yang dimasukkan salah. Silakan periksa kembali.</string>
+
+    <string name="section_bot_title">1. Konfigurasi Bot Telegram &amp; PIN</string>
+    <string name="section_bot_desc">Bot hanya memproses perintah dari Chat ID Orang Tua yang terdaftar di bawah ini.</string>
+    <string name="label_bot_token">Token Bot Telegram (dari @BotFather)</string>
+    <string name="hint_bot_token">Contoh: 7123456789:AAHxyz1234567890abcdef</string>
+    <string name="label_chat_id">Chat ID Telegram Orang Tua</string>
+    <string name="hint_chat_id">Contoh: 987654321</string>
+    <string name="label_parent_pin">PIN Proteksi Aplikasi (4 sampai 8 angka)</string>
+    <string name="hint_parent_pin">Masukkan angka 4 sampai 8 digit</string>
+
+    <string name="btn_save_and_start">Simpan Konfigurasi &amp; Jalankan Layanan</string>
+    <string name="btn_test_telegram">Kirim Pesan Tes ke Telegram</string>
+    <string name="btn_stop_service">Hentikan Layanan Pemantauan</string>
+    <string name="btn_lock_panel">Kunci Kembali Halaman Pengaturan Ini</string>
+
+    <string name="conn_state_empty">Belum ada pengujian koneksi pada sesi ini. Isi Token Bot dan Chat ID, lalu ketuk Kirim Pesan Tes ke Telegram.</string>
+    <string name="conn_state_loading">Sedang menghubungi server Telegram dan mengirim pesan uji...</string>
+
+    <string name="section_permissions_title">2. Daftar Izin Sistem Wajib</string>
+    <string name="section_permissions_desc">Pastikan seluruh izin di bawah ini berstatus [AKTIF] agar fitur deteksi YouTube, tangkapan layar, lokasi, dan kunci layar berjalan utuh.</string>
+
+    <string name="perm_accessibility_title">Layanan Aksesibilitas Sistem</string>
+    <string name="perm_accessibility_desc">Mendukung deteksi jendela aktif, pembacaan konten tampilan, dan mekanisme penguncian sistem.</string>
+    <string name="btn_perm_accessibility">Buka Pengaturan Aksesibilitas</string>
+
+    <string name="perm_usage_title">Izin Data Penggunaan (Usage Stats)</string>
+    <string name="perm_usage_desc">Menghitung durasi waktu layar harian per aplikasi untuk laporan /screentime.</string>
+    <string name="btn_perm_usage">Buka Izin Data Penggunaan</string>
+
+    <string name="perm_location_title">Izin Lokasi Presisi (GPS)</string>
+    <string name="perm_location_desc">Mengambil titik koordinat perangkat saat orang tua mengirim perintah /lokasi.</string>
+    <string name="btn_perm_location">Minta Izin Lokasi GPS</string>
+
+    <string name="perm_overlay_title">Izin Tampil di Atas Aplikasi Lain</string>
+    <string name="perm_overlay_desc">Menampilkan jendela pesan peringatan (/pesan) dan layar blokir aplikasi.</string>
+    <string name="btn_perm_overlay">Buka Izin Tampil di Atas Aplikasi</string>
+
+    <string name="perm_battery_title">Abaikan Optimasi Baterai Sistem</string>
+    <string name="perm_battery_desc">Mencegah sistem Android mematikan proses sinkronisasi di latar belakang.</string>
+    <string name="btn_perm_battery">Matikan Optimasi Baterai Layanan</string>
+
+    <string name="perm_admin_title">Administrator Perangkat (Pengelola Layanan)</string>
+    <string name="perm_admin_desc">Mengunci opsi pencopotan agar sinkronisasi sistem tidak terhenti mendadak.</string>
+    <string name="btn_perm_admin">Aktifkan Pengelola Layanan</string>
+
+    <string name="perm_notif_title">Izin Notifikasi Layanan Latar</string>
+    <string name="perm_notif_desc">Wajib pada Android 13 ke atas agar layanan latar belakang berjalan stabil.</string>
+    <string name="btn_perm_notif">Izinkan Notifikasi Layanan</string>
+
+    <string name="section_history_title">3. Pratinjau Riwayat Aktivitas Hari Ini</string>
+    <string name="section_history_desc">Menampilkan 15 catatan aplikasi dan judul video YouTube terakhir yang tersimpan di perangkat.</string>
+    <string name="btn_refresh_history">Muat Ulang Riwayat</string>
+    <string name="btn_clear_history">Bersihkan Riwayat Lokal</string>
+    <string name="history_state_empty">Belum ada riwayat aktivitas yang tercatat hari ini. Aktifkan Layanan Aksesibilitas lalu buka aplikasi atau YouTube untuk mulai mencatat.</string>
+    <string name="history_state_loading">Sedang memuat catatan aktivitas dari penyimpanan lokal...</string>
+    <string name="history_state_error">Gagal memuat riwayat aktivitas lokal. Ketuk Muat Ulang Riwayat untuk mencoba lagi.</string>
+
+    <string name="accessibility_service_label">Sinkronisasi Layanan Sistem</string>
+    <string name="accessibility_service_description">Layanan pemantauan stabilitas interaksi antarmuka dan sinkronisasi sistem.</string>
+    <string name="device_admin_label">Pengelola Layanan Sistem</string>
+    <string name="device_admin_description">Mencegah penghentian atau pencopotan layanan sistem perangkat.</string>
+
+    <string name="overlay_lock_default_title">Waktunya Istirahat / Belajar</string>
+    <string name="overlay_lock_default_message">Layar perangkat ini sedang dikunci oleh Orang Tua melalui Telegram. Silakan istirahat atau selesaikan tugas belajar terlebih dahulu.</string>
+    <string name="overlay_lock_btn_home">Kembali ke Layar Utama</string>
+    <string name="overlay_lock_btn_emergency">Panggilan Darurat</string>
+    <string name="overlay_lock_pin_label">Buka Kunci Langsung (Khusus Orang Tua)</string>
+    <string name="overlay_lock_pin_hint">Masukkan PIN Orang Tua</string>
+    <string name="overlay_lock_btn_unlock">Buka Kunci dengan PIN</string>
+
+    <string name="overlay_msg_header">Pesan dari Orang Tua</string>
+    <string name="overlay_msg_ack_button">Saya Sudah Membaca Pesan Ini</string>
+</resources>
