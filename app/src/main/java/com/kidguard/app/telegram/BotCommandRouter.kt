@@ -430,7 +430,7 @@ class BotCommandRouter(
                 TelegramClient.sendMessage(
                     botToken = prefs.botToken,
                     chatId = prefs.parentChatId,
-                    text = "Pemantauan pesan WhatsApp dimatikan. Ketik /wa on untuk menyalakannya kembali."
+                    text = "💬 Pemantauan pesan WhatsApp dimatikan. Ketik /wa on untuk menyalakannya kembali."
                 )
             }
 
