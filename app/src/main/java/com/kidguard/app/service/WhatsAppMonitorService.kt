@@ -33,7 +33,7 @@ class WhatsAppMonitorService : NotificationListenerService() {
         if (prefs.isTelegramConfigured()) {
             TelegramMonitorService.enqueueInstantAlert(
                 this,
-                "Info Sistem: Pemantauan notifikasi WhatsApp telah aktif. Pesan WhatsApp baru akan diteruskan ke chat ini."
+                "💬 Info Sistem: Pemantauan notifikasi WhatsApp telah aktif. Pesan WhatsApp baru akan diteruskan ke chat ini."
             )
         }
     }
@@ -95,7 +95,7 @@ class WhatsAppMonitorService : NotificationListenerService() {
 
         TelegramMonitorService.enqueueInstantAlert(
             this,
-            "Pesan WhatsApp Baru\nDari: $fromLabel\nPesan: \"$messageText\""
+            "💬 Pesan WhatsApp Baru\n👤 Dari: $fromLabel\n📝 Pesan: \"$messageText\""
         )
     }
 

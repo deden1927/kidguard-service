@@ -18,7 +18,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
                 TelegramMonitorService.startService(context)
                 TelegramMonitorService.enqueueInstantAlert(
                     context,
-                    "Info Sistem: Perangkat anak baru saja dinyalakan ulang dan layanan pemantauan KidGuard telah aktif kembali."
+                    "🔄 Info Sistem: Perangkat anak baru saja dinyalakan ulang dan layanan pemantauan KidGuard telah aktif kembali."
                 )
             }
         }

@@ -166,7 +166,7 @@ class TelegramMonitorService : Service() {
             TelegramClient.sendMessage(
                 botToken = prefs.botToken,
                 chatId = prefs.parentChatId,
-                text = "Peringatan Baterai Lemah: Baterai HP anak tersisa $pct% dan sedang tidak dicas."
+                text = "🔋 Peringatan Baterai Lemah: Baterai HP anak tersisa $pct% dan sedang tidak dicas."
             )
         } else if (pct >= 20 || isCharging) {
             prefs.lastLowBatteryAlertCycle = false

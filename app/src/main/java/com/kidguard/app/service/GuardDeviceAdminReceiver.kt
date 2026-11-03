@@ -10,14 +10,14 @@ class GuardDeviceAdminReceiver : DeviceAdminReceiver() {
         super.onEnabled(context, intent)
         TelegramMonitorService.enqueueInstantAlert(
             context,
-            "Info Keamanan: Proteksi Hapus Aplikasi (Device Admin) telah diaktifkan."
+            "🛡️ Info Keamanan: Proteksi Hapus Aplikasi (Device Admin) telah diaktifkan."
         )
     }
 
     override fun onDisableRequested(context: Context, intent: Intent): CharSequence {
         TelegramMonitorService.enqueueInstantAlert(
             context,
-            "Peringatan Keamanan: Seseorang membuka pengaturan untuk menonaktifkan Pengelola Layanan Sistem di HP anak."
+            "⚠️ Peringatan Keamanan: Seseorang membuka pengaturan untuk menonaktifkan Pengelola Layanan Sistem di HP anak."
         )
         return "Menonaktifkan pengelola ini dapat menyebabkan beberapa fungsi sinkronisasi sistem berhenti bekerja."
     }
@@ -26,7 +26,7 @@ class GuardDeviceAdminReceiver : DeviceAdminReceiver() {
         super.onDisabled(context, intent)
         TelegramMonitorService.enqueueInstantAlert(
             context,
-            "Peringatan Keamanan: Proteksi Hapus Aplikasi (Device Admin) KidGuard telah dinonaktifkan!"
+            "⚠️ Peringatan Keamanan: Proteksi Hapus Aplikasi (Device Admin) KidGuard telah dinonaktifkan!"
         )
     }
 }

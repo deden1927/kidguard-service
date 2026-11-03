@@ -388,9 +388,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             val testMessage = if (isSavingConfig) {
-                "KidGuard berhasil dikonfigurasi dan layanan pemantauan telah aktif. Ketuk tombol menu di bawah atau ketik /status untuk memantau perangkat."
+                "✅ KidGuard berhasil dikonfigurasi dan layanan pemantauan telah aktif. Ketuk tombol menu di bawah atau ketik /status untuk memantau perangkat."
             } else {
-                "Tes koneksi KidGuard berhasil. Bot @${meResult.botUsername} siap menerima perintah dari Chat ID ini."
+                "🧪 Tes koneksi KidGuard berhasil. Bot @${meResult.botUsername} siap menerima perintah dari Chat ID ini."
             }
 
             val sendResult = TelegramClient.sendMessage(

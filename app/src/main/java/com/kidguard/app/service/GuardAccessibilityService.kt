@@ -190,7 +190,7 @@ class GuardAccessibilityService : AccessibilityService() {
             )
             TelegramMonitorService.enqueueInstantAlert(
                 this,
-                "Peringatan Blokir: Anak mencoba membuka aplikasi \"$appLabel\" yang diblokir (kata kunci: $matchedRule). Layar aplikasi telah ditutup otomatis."
+                "🚫 Peringatan Blokir: Anak mencoba membuka aplikasi \"$appLabel\" yang diblokir (kata kunci: $matchedRule). Layar aplikasi telah ditutup otomatis."
             )
         }
     }
@@ -214,7 +214,7 @@ class GuardAccessibilityService : AccessibilityService() {
         )
         TelegramMonitorService.enqueueInstantAlert(
             this,
-            "Aktivitas Baru: Anak membuka aplikasi \"$appLabel\"."
+            "🎮 Aktivitas Baru: Anak membuka aplikasi \"$appLabel\"."
         )
     }
 
@@ -240,7 +240,7 @@ class GuardAccessibilityService : AccessibilityService() {
         )
         TelegramMonitorService.enqueueInstantAlert(
             this,
-            "Tontonan YouTube Baru ($appLabel):\n\"$cleaned\""
+            "🎬 Tontonan YouTube Baru ($appLabel):\n\"$cleaned\""
         )
     }
 
