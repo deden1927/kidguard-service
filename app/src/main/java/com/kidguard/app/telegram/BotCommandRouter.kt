@@ -38,8 +38,12 @@ class BotCommandRouter(
             return
         }
 
+        // Tombol papan cepat membawa label emoji (contoh: "📊 /status"),
+        // jadi teks dinormalkan dulu agar perintah tetap terbaca.
         val rawText = update.text.trim()
-        val parts = rawText.split(Regex("\\s+"), limit = 2)
+        val commandStartIndex = rawText.indexOf('/')
+        val normalizedText = if (commandStartIndex > 0) rawText.substring(commandStartIndex) else rawText
+        val parts = normalizedText.split(Regex("\\s+"), limit = 2)
         val commandToken = parts[0].lowercase(Locale.ROOT).substringBefore("@")
         val argument = if (parts.size > 1) parts[1].trim() else ""
 

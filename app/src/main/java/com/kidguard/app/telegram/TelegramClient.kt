@@ -205,10 +205,10 @@ object TelegramClient {
     }
 
     private fun buildReplyKeyboardMarkup(): JSONObject {
-        val row1 = JSONArray().put("/status").put("/ss").put("/lokasi")
-        val row2 = JSONArray().put("/yt").put("/screentime").put("/wa")
-        val row3 = JSONArray().put("/lock").put("/unlock")
-        val row4 = JSONArray().put("/menu")
+        val row1 = JSONArray().put("📊 /status").put("📸 /ss").put("📍 /lokasi")
+        val row2 = JSONArray().put("📜 /yt").put("⏱️ /screentime").put("💬 /wa")
+        val row3 = JSONArray().put("🔒 /lock").put("🔓 /unlock")
+        val row4 = JSONArray().put("📋 /menu")
         val keyboard = JSONArray().put(row1).put(row2).put(row3).put(row4)
 
         return JSONObject().apply {
