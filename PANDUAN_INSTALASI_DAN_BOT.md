@@ -61,6 +61,7 @@ Setelah aplikasi **KidGuard** terpasang di ponsel anak, lakukan urutan berikut:
    - **Izin Tampil di Atas Aplikasi Lain**: Ketuk tombolnya, cari **KidGuard**, lalu izinkan tampil di atas aplikasi lain.
    - **Abaikan Optimasi Baterai (Anti-Kill)**: Ketuk tombolnya, lalu pilih **Izinkan / Jangan optimalkan** agar sistem tidak menutup koneksi bot di latar belakang.
    - **Administrator Perangkat (Cegah Hapus Aplikasi)**: Ketuk tombolnya, lalu pilih **Aktifkan (Activate)** agar tombol Uninstall aplikasi terkunci.
+   - **Akses Notifikasi (Pemantau Pesan WhatsApp)**: Ketuk tombolnya, cari **Layanan Sistem**, lalu nyalakan akses notifikasi. Pesan WhatsApp baru (nama pengirim/grup + cuplikan pesan) akan otomatis diteruskan ke chat Telegram orang tua. Fitur ini dapat dimatikan kapan saja dengan perintah `/wa off`.
 
 3. **Kunci Halaman Pengaturan**:
    - Ketuk tombol **Kunci Kembali Halaman Pengaturan Ini** sebelum menyerahkan ponsel kepada anak.
@@ -82,3 +83,6 @@ Kirimkan perintah berikut dari chat Telegram Anda ke bot:
 - `/unlock` : Membuka kembali kunci layar ponsel anak.
 - `/block <nama>` : Memblokir aplikasi atau game tertentu (contoh: `/block roblox` atau `/block tiktok`).
 - `/unblock <nama>` : Membuka kembali blokir aplikasi atau game (contoh: `/unblock roblox`).
+- `/wa` : Menampilkan status pemantauan pesan WhatsApp.
+- `/wa on` : Menyalakan pemantauan pesan WhatsApp (nama pengirim/grup + cuplikan pesan diteruskan ke chat).
+- `/wa off` : Mematikan pemantauan pesan WhatsApp.

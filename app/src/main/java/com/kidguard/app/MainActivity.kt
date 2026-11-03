@@ -26,6 +26,7 @@ import com.kidguard.app.data.AppPrefs
 import com.kidguard.app.service.GuardAccessibilityService
 import com.kidguard.app.service.GuardDeviceAdminReceiver
 import com.kidguard.app.service.TelegramMonitorService
+import com.kidguard.app.service.WhatsAppMonitorService
 import com.kidguard.app.telegram.TelegramClient
 import com.kidguard.app.util.LocationHelper
 import com.kidguard.app.util.UsageStatsHelper
@@ -74,6 +75,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnPermAdmin: Button
     private lateinit var tvPermNotifStatus: TextView
     private lateinit var btnPermNotif: Button
+    private lateinit var tvPermNotifListenerStatus: TextView
+    private lateinit var btnPermNotifListener: Button
 
     private lateinit var tvHistoryContent: TextView
     private lateinit var btnRefreshHistory: Button
@@ -162,6 +165,8 @@ class MainActivity : AppCompatActivity() {
         btnPermAdmin = findViewById(R.id.btnPermAdmin)
         tvPermNotifStatus = findViewById(R.id.tvPermNotifStatus)
         btnPermNotif = findViewById(R.id.btnPermNotif)
+        tvPermNotifListenerStatus = findViewById(R.id.tvPermNotifListenerStatus)
+        btnPermNotifListener = findViewById(R.id.btnPermNotifListener)
 
         tvHistoryContent = findViewById(R.id.tvHistoryContent)
         btnRefreshHistory = findViewById(R.id.btnRefreshHistory)
@@ -284,6 +289,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 startActivitySafely(intent)
             }
+        }
+
+        btnPermNotifListener.setOnClickListener {
+            startActivitySafely(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
         }
 
         btnRefreshHistory.setOnClickListener {
@@ -491,6 +500,13 @@ class MainActivity : AppCompatActivity() {
             tvPermNotifStatus,
             getString(R.string.perm_notif_title),
             notifGranted
+        )
+
+        val notifListenerGranted = WhatsAppMonitorService.isNotificationAccessEnabled(this)
+        updatePermissionTitleStatus(
+            tvPermNotifListenerStatus,
+            getString(R.string.perm_notif_listener_title),
+            notifListenerGranted
         )
     }
 

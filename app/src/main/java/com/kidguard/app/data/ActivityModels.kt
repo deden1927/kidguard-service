@@ -4,6 +4,7 @@ enum class ActivityType {
     APP_OPEN,
     YOUTUBE_VIDEO,
     BLOCKED_ATTEMPT,
+    WHATSAPP_MESSAGE,
     SYSTEM_EVENT
 }
 

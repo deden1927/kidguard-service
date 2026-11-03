@@ -61,6 +61,10 @@
     <string name="perm_notif_desc">Wajib pada Android 13 ke atas agar layanan latar belakang berjalan stabil.</string>
     <string name="btn_perm_notif">Izinkan Notifikasi Layanan</string>
 
+    <string name="perm_notif_listener_title">Akses Notifikasi (Pemantau Pesan WhatsApp)</string>
+    <string name="perm_notif_listener_desc">Meneruskan nama pengirim atau grup dan cuplikan pesan WhatsApp baru ke Telegram orang tua.</string>
+    <string name="btn_perm_notif_listener">Buka Pengaturan Akses Notifikasi</string>
+
     <string name="section_history_title">3. Pratinjau Riwayat Aktivitas Hari Ini</string>
     <string name="section_history_desc">Menampilkan 15 catatan aplikasi dan judul video YouTube terakhir yang tersimpan di perangkat.</string>
     <string name="btn_refresh_history">Muat Ulang Riwayat</string>

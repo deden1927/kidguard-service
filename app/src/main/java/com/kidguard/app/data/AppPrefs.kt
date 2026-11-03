@@ -61,6 +61,10 @@ class AppPrefs(context: Context) {
         get() = prefs.getBoolean(KEY_LOW_BATTERY_ALERT_SENT, false)
         set(value) = prefs.edit().putBoolean(KEY_LOW_BATTERY_ALERT_SENT, value).apply()
 
+    var whatsappMonitorEnabled: Boolean
+        get() = prefs.getBoolean(KEY_WHATSAPP_MONITOR_ENABLED, true)
+        set(value) = prefs.edit().putBoolean(KEY_WHATSAPP_MONITOR_ENABLED, value).apply()
+
     fun isTelegramConfigured(): Boolean {
         return botToken.isNotBlank() && parentChatId.isNotBlank()
     }
@@ -169,6 +173,7 @@ class AppPrefs(context: Context) {
             val tag = when (item.type) {
                 ActivityType.YOUTUBE_VIDEO -> "[YouTube]"
                 ActivityType.BLOCKED_ATTEMPT -> "[Diblokir]"
+                ActivityType.WHATSAPP_MESSAGE -> "[WhatsApp]"
                 ActivityType.SYSTEM_EVENT -> "[Sistem]"
                 ActivityType.APP_OPEN -> "[Aplikasi]"
             }
@@ -198,6 +203,7 @@ class AppPrefs(context: Context) {
         private const val KEY_CURRENT_PACKAGE = "current_package"
         private const val KEY_CURRENT_YT_TITLE = "current_yt_title"
         private const val KEY_LOW_BATTERY_ALERT_SENT = "low_battery_alert_sent"
+        private const val KEY_WHATSAPP_MONITOR_ENABLED = "whatsapp_monitor_enabled"
         private const val KEY_BLOCKED_KEYWORDS = "blocked_keywords"
         private const val KEY_ACTIVITY_LOG_JSON = "activity_log_json"
     }

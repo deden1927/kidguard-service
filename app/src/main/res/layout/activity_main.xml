@@ -585,6 +585,37 @@
                     android:textAllCaps="false"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_body_size" />
+
+                <TextView
+                    android:id="@+id/tvPermNotifListenerStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/perm_notif_listener_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/perm_notif_listener_desc"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btnPermNotifListener"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_secondary_button"
+                    android:focusable="true"
+                    android:minHeight="@dimen/min_touch_target"
+                    android:text="@string/btn_perm_notif_listener"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body_size" />
             </LinearLayout>
 
             <LinearLayout

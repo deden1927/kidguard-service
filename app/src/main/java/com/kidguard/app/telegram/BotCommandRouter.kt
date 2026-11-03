@@ -10,6 +10,7 @@ import com.kidguard.app.R
 import com.kidguard.app.data.AppPrefs
 import com.kidguard.app.data.TelegramUpdate
 import com.kidguard.app.service.GuardAccessibilityService
+import com.kidguard.app.service.WhatsAppMonitorService
 import com.kidguard.app.util.LocationHelper
 import com.kidguard.app.util.OverlayManager
 import com.kidguard.app.util.UsageStatsHelper
@@ -54,6 +55,7 @@ class BotCommandRouter(
             "/unlock" -> handleUnlockCommand()
             "/block" -> handleBlockCommand(argument)
             "/unblock" -> handleUnblockCommand(argument)
+            "/wa", "/whatsapp" -> handleWhatsAppToggleCommand(argument)
             else -> {
                 TelegramClient.sendMessage(
                     botToken = prefs.botToken,
@@ -80,6 +82,7 @@ class BotCommandRouter(
             appendLine("/unlock : Buka kembali kunci layar perangkat")
             appendLine("/block <nama> : Blokir aplikasi atau game (contoh: /block roblox)")
             appendLine("/unblock <nama> : Hapus blokir aplikasi atau game")
+            appendLine("/wa on atau /wa off : Aktifkan atau matikan pemantauan pesan WhatsApp")
         }
         TelegramClient.sendMessage(
             botToken = prefs.botToken,
@@ -116,6 +119,11 @@ class BotCommandRouter(
             appendLine(
                 "Daftar Blokir (${blockedSet.size}): ${
                     if (blockedSet.isEmpty()) "Tidak ada" else blockedSet.joinToString(", ")
+                }"
+            )
+            appendLine(
+                "Pemantauan WhatsApp: ${
+                    if (prefs.whatsappMonitorEnabled) "AKTIF" else "NONAKTIF"
                 }"
             )
         }
@@ -386,6 +394,48 @@ class BotCommandRouter(
                 if (updated.isEmpty()) "Kosong" else updated.joinToString(", ")
             }"
         )
+    }
+
+    private suspend fun handleWhatsAppToggleCommand(argument: String) {
+        val mode = argument.trim().lowercase(Locale.ROOT)
+        when (mode) {
+            "on", "aktif", "nyala" -> {
+                prefs.whatsappMonitorEnabled = true
+                val accessState = if (WhatsAppMonitorService.isNotificationAccessEnabled(context)) {
+                    "sudah aktif"
+                } else {
+                    "belum aktif, buka aplikasi KidGuard lalu aktifkan Akses Notifikasi"
+                }
+                TelegramClient.sendMessage(
+                    botToken = prefs.botToken,
+                    chatId = prefs.parentChatId,
+                    text = "Pemantauan pesan WhatsApp dinyalakan. Status akses notifikasi: $accessState."
+                )
+            }
+
+            "off", "mati", "nonaktif" -> {
+                prefs.whatsappMonitorEnabled = false
+                TelegramClient.sendMessage(
+                    botToken = prefs.botToken,
+                    chatId = prefs.parentChatId,
+                    text = "Pemantauan pesan WhatsApp dimatikan. Ketik /wa on untuk menyalakannya kembali."
+                )
+            }
+
+            else -> {
+                val monitorState = if (prefs.whatsappMonitorEnabled) "AKTIF" else "NONAKTIF"
+                val accessState = if (WhatsAppMonitorService.isNotificationAccessEnabled(context)) {
+                    "AKTIF"
+                } else {
+                    "BELUM AKTIF"
+                }
+                TelegramClient.sendMessage(
+                    botToken = prefs.botToken,
+                    chatId = prefs.parentChatId,
+                    text = "Status Pemantauan WhatsApp\nPemantauan: $monitorState\nAkses Notifikasi: $accessState\nGunakan /wa on atau /wa off untuk mengubah."
+                )
+            }
+        }
     }
 
     private fun readBatteryState(): Pair<Int, Boolean> {
